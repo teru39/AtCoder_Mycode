@@ -1,19 +1,14 @@
+# 12:53
+# coding: utf-8
 n = int(input())
 
 x = list(map(int, input().split()))
-x_s = sorted(x)
-ct = 0
-print(x_s)
-for i in x_s:
-    if ct == len(x) // 2-1:
-        left = i
-    elif ct == len(x) // 2:
-        right = i
-        break
-    ct += 1
+xs = sorted(x)
+left = xs[n // 2 - 1]
+right = xs[n // 2]
 
-for i in x_s:
-    if i <= left:
+for i in range(n):
+    if x[i] <= left:
         print(right)
     else:
         print(left)
